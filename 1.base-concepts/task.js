@@ -2,6 +2,8 @@
 function solveEquation(a, b, c) {
   let arr = [];
   123
+  qwe
+  da
   return arr;
 }
 
