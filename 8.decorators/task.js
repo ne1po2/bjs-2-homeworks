@@ -25,7 +25,7 @@ function debounceDecoratorNew(func, timeout) {
   let count = 0;
   let allCount = 0;
 
-  function wrapper(...args) {
+  const wrapper = (...args) => {
     clearTimeout(timerId);
     const isFirstCall = !timerId;
 
@@ -42,16 +42,16 @@ function debounceDecoratorNew(func, timeout) {
     }, timeout);
 
     allCount++;
-  }
+  };
 
   Object.defineProperty(wrapper, 'count', {
-    get: function () {
+    get() {
       return count;
     },
   });
 
   Object.defineProperty(wrapper, 'allCount', {
-    get: function () {
+    get() {
       return allCount;
     },
   });
